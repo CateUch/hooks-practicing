@@ -9,7 +9,7 @@ function App() {
 
 
  useEffect( () => {
-  const loggingStatus = localStorage.getItem('isLogging');
+  const loggingStatus = localStorage.getItem('isLoggedIn');
   if (loggingStatus === '1') {
     setIsLoggedIn(true)
   }
@@ -17,12 +17,12 @@ function App() {
 
   const loginHandler = (email, password) => {
     // email and password should be checked there
-    localStorage.setItem('isLogging', '1')
+    localStorage.setItem('isLoggedIn', '1')
     setIsLoggedIn(true);
   };
 
   const logoutHandler = () => {
-    localStorage.removeItem('isLogging')
+    localStorage.removeItem('isLoggedIn')
     setIsLoggedIn(false);
   };
 
